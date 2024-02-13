@@ -18,12 +18,12 @@ class MyUser extends Equatable {
 
   static const empty = MyUser(id: "", email: "", name: '', picture: '');
 
-  MyUser copyWith(
+  MyUser copyWith({
     String? id,
     String? email,
     String? name,
     String? picture,
-  ) {
+  }) {
     return MyUser(
         id: id ?? this.id,
         email: email ?? this.email,
@@ -34,12 +34,12 @@ class MyUser extends Equatable {
   bool get isEmpty => this == MyUser.empty;
   bool get isNotEmpty => this != MyUser.empty;
 
-  MyUserEntity toEntity(MyUserEntity entity) {
+  MyUserEntity toEntity() {
     return MyUserEntity(
-      id: entity.id,
-      email: entity.email,
-      name: entity.name,
-      picture: entity.picture,
+      id: id,
+      email: email,
+      name: name,
+      picture: picture,
     );
   }
 
